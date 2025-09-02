@@ -157,7 +157,7 @@ MIT License
 ## 👨‍💻 Author
 
 **[Chilukuri Mallikharjun Reddy]**  
-🔗 Replace with your [GitHub Profile](https://github.com/your-username)
+🔗 Replace with your [GitHub Profile](https://github.com/MALLIKHARJUNCH-02)
 
 ---
 
