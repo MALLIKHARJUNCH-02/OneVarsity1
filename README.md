@@ -121,7 +121,14 @@ README.md              # This file
 ---
 
 ## Screenshots
-![Login](./login.png)
+![Home](./home.png)
+![Form Validation](./formvaladition.png)
+![Add New User](./newuser.png)
+
+## Demo Video
+[Watch the Demo](https://drive.google.com/file/d/1XAdYJPrD5PEj28ThFgvsW9y-oRn12bpt/view?usp=sharing)
+
+
 
 ## Technologies Used
 
