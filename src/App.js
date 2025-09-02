@@ -17,19 +17,46 @@ export default function App() {
   // user data from server
   const [data, setData] = useState([]);
 
-  // columns for table
+  // delete handler
+  function handleDelete(id) {
+    fetch(`https://json-server-assignment2-backend.onrender.com/users/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to delete");
+        // remove user from data state
+        setData((prev) => prev.filter((user) => user.id !== id));
+      })
+      .catch((err) => {
+        console.error("Delete user error:", err);
+      });
+  }
+
+  // columns for table with delete action
   const columns = [
     { header: "ID", accessor: "id" },
     { header: "Name", accessor: "name" },
     { header: "Email", accessor: "email" },
+    {
+      header: "Actions",
+      accessor: "actions",
+      cell: (row) => (
+        <Button
+          onClick={() => handleDelete(row.id)}
+          style={{ backgroundColor: "red", color: "white" }}
+        >
+          Delete
+        </Button>
+      ),
+    },
   ];
 
   // get users from server on load
   useEffect(() => {
     fetch("https://json-server-assignment2-backend.onrender.com/users")
-      .then(res => res.json())
-      .then(fetchedData => setData(fetchedData))
-      .catch(err => console.error("Fetch error:", err));
+      .then((res) => res.json())
+      .then((fetchedData) => setData(fetchedData))
+      .catch((err) => console.error("Fetch error:", err));
   }, []);
 
   // handle form input changes
@@ -37,10 +64,10 @@ export default function App() {
     const { name, value } = e.target;
 
     // update input value
-    setFormValues(prev => ({ ...prev, [name]: value }));
+    setFormValues((prev) => ({ ...prev, [name]: value }));
 
     // check empty and set error if needed
-    setErrors(prev => ({
+    setErrors((prev) => ({
       ...prev,
       [name]: value.trim() === "" ? "This field is required." : "",
     }));
@@ -72,10 +99,10 @@ export default function App() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
     })
-      .then(res => res.json())
-      .then(createdUser => {
+      .then((res) => res.json())
+      .then((createdUser) => {
         // add new user to data list
-        setData(prev => [...prev, createdUser]);
+        setData((prev) => [...prev, createdUser]);
 
         // reset form and errors
         setFormValues({ name: "", email: "" });
@@ -84,12 +111,11 @@ export default function App() {
         // close modal
         setModalVisible(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("Add user error:", err);
       });
   }
 
-  // render the app UI
   return (
     <div style={{ maxWidth: "600px", margin: "2rem auto", padding: "0 1rem" }}>
       <h1>Reusable Components Demo with JSON Server</h1>
@@ -98,7 +124,11 @@ export default function App() {
       <Button onClick={() => setModalVisible(true)}>Add User</Button>
 
       {/* modal with form */}
-      <Modal visible={modalVisible} title="Add New User" onClose={() => setModalVisible(false)}>
+      <Modal
+        visible={modalVisible}
+        title="Add New User"
+        onClose={() => setModalVisible(false)}
+      >
         <form onSubmit={handleSubmit}>
           <FormInput
             label="Name"

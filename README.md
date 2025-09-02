@@ -1,16 +1,28 @@
+## Table of Contents
+- [Features](#features)
+- [Setup Instructions](#setup-instructions)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Live Deployments](#live-deployments)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Screenshots](#screenshots)
+- [Demo Video](#demo-video)
+
+
 # ⚛️ Reusable Components Demo with JSON Server
 
 A React-based demo application showcasing a library of **reusable components** integrated with a **JSON Server backend**. It demonstrates dynamic data fetching, adding new records, and state management with React hooks.
 
 ---
 
-## 🚀 Features
+## Features
 
 - ♻️ **Reusable React components**
   - Button
   - Modal
   - Form Input
-  - Table / Data Grid
+  - Table
 
 - 🔗 **JSON Server Integration**
   - Fetch user data from a mock REST API.
@@ -29,7 +41,7 @@ A React-based demo application showcasing a library of **reusable components** i
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### ✅ Prerequisites
 - [Node.js](https://nodejs.org/) and npm installed.
@@ -38,7 +50,7 @@ A React-based demo application showcasing a library of **reusable components** i
   npm install -g json-server
   ```
 
-### ⚙️ Installation
+### Installation
 
 1. **Clone the repository**
    ```bash
@@ -72,7 +84,16 @@ A React-based demo application showcasing a library of **reusable components** i
 
 ---
 
-## 📂 Project Structure
+
+## Live Deployments
+
+- **Backend (JSON Server):**  
+  🔗 [https://json-server-assignment2-backend.onrender.com](https://json-server-assignment2-backend.onrender.com)
+
+- **Frontend (React App):**  
+  🔗 [https://one-varsity1.vercel.app/](https://one-varsity1.vercel.app/)
+
+## Project Structure
 
 ```
 src/
@@ -89,7 +110,7 @@ README.md              # This file
 
 ---
 
-## 📖 Usage
+## Usage
 
 - Click **Add User** to open the modal dialog.
 - Enter **Name** and **Email** to add a new user.
@@ -99,7 +120,10 @@ README.md              # This file
 
 ---
 
-## 🧰 Technologies Used
+## Screenshots
+![Login](./login.png)
+
+## Technologies Used
 
 - [React](https://react.dev/) (functional components & hooks)
 - [JSON Server](https://github.com/typicode/json-server) (mock REST API backend)
