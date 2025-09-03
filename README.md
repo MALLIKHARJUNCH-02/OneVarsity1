@@ -1,6 +1,5 @@
 ## Table of Contents
 - [Features](#features)
-- [Setup Instructions](#setup-instructions)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Live Deployments](#live-deployments)
@@ -54,9 +53,8 @@ A React-based demo application showcasing a library of **reusable components** i
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd Mallikharjun
-   cd assignment2
+   git https://github.com/MALLIKHARJUNCH-02/OneVarsity1.git
+   cd OneVarsity1
    ```
 
 2. **Install dependencies**
